@@ -11,14 +11,14 @@
     </parent>
 
     <groupId>com.mycompany</groupId>
-    <artifactId>eeapp</artifactId>
+    <artifactId>swarm-demoapp</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.mycompany</groupId>
-            <artifactId>javaee-commons</artifactId>
+            <artifactId>javaee-starter</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>
