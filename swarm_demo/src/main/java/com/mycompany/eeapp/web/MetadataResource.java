@@ -1,11 +1,15 @@
 package com.mycompany.eeapp.web;
 
+import com.mycompany.Config;
 import com.mycompany.eeapp.service.MetadataService;
 
 import javax.inject.Inject;
 import javax.json.Json;
 import javax.json.JsonObject;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
@@ -14,14 +18,24 @@ import java.util.logging.Logger;
 @Path("meta")
 public class MetadataResource {
 
+    @Inject
+    private Logger logger;
+
     @Context
     private UriInfo uriInfo;
 
     @Inject
-    private Logger logger;
-
-    @Inject
     private MetadataService metadataService;
+
+    @Inject @Config("mycompany.msg")
+    private String msg;
+
+    @GET
+    @Path("/hello")
+    public String hello() {
+        logger.info("hello");
+        return msg;
+    }
 
     @GET
     @Path("/get/{id}")

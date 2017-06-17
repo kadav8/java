@@ -4,25 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.mycompany</groupId>
+        <artifactId>javaee-parent</artifactId>
+        <version>1.0</version>
+    </parent>
+
     <groupId>com.mycompany</groupId>
     <artifactId>eeapp</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-        <version.wildfly.swarm>2017.6.0</version.wildfly.swarm>
-    </properties>
-
     <dependencies>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-            <scope>provided</scope>
+            <groupId>com.mycompany</groupId>
+            <artifactId>javaee-commons</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
