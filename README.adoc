@@ -1,9 +1,3 @@
-== WildFly Swarm
+https://github.com/payara/Payara-Examples
 
-WildFly Swarm offers an innovative approach to packaging and running Java EE applications by packaging them with just enough of the server runtime to "java -jar" your application.
-
-==== Flexible
-Simply specify WildFly Swarm maven dependencies to bundle just the parts of the Java EE 7 WildFly application server that you need. Don't use EJBs or JPA? Great, nothing is bundled unless you specify it! 
-
-==== Straightforward
-Generate uberjar, or generate a .war and deploy to any Java EE compatible application server. 
+https://github.com/apache/tomee/tree/master/examples
