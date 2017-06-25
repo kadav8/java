@@ -1,0 +1,5 @@
+glassfish/payara-hoz: glassfish-resources.xml
+
+tomee-hez: resources.xml
+
+wildfly esetén az admin felületen kell felvenni új h2 datasource-t, ahol a jndi: java:jboss/h2ds

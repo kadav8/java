@@ -1,3 +1,9 @@
 *.iml
 .idea/
 target/
+/javaee-demoapp/javaee-demoapp.iml
+/javaee-demoapp/.classpath
+/javaee-demoapp/.project
+/javaee-demoapp/.settings/
+/javaee-parent/.project
+/javaee-parent/.settings/

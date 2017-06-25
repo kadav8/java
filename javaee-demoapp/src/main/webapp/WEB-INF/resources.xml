@@ -1,0 +1,4 @@
+<Resource id="java:jboss/H2DS" type="DataSource">
+    JdbcDriver  org.h2.Driver
+    JdbcUrl     jdbc:h2:mem:test
+</Resource>

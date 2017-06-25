@@ -15,8 +15,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <version.wildfly.swarm>2017.6.0</version.wildfly.swarm>
-        <version.h2.db>1.4.196</version.h2.db>
+        <version.h2>1.4.196</version.h2>
+        <version.hibernate>5.2.10.Final</version.hibernate>
     </properties>
 
     <dependencies>
@@ -33,5 +33,9 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <modules>
+        <module>../javaee-demoapp</module>
+    </modules>
 
 </project>
