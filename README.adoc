@@ -2,4 +2,6 @@ https://github.com/payara/Payara-Examples
 
 https://github.com/apache/tomee/tree/master/examples
 
+https://github.com/wildfly/quickstart
+
 https://github.com/wildfly-swarm/wildfly-swarm-examples
