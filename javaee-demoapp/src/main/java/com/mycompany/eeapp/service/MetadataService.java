@@ -1,5 +1,6 @@
 package com.mycompany.eeapp.service;
 
+import com.mycompany.eeapp.LatencyLogger;
 import com.mycompany.eeapp.data.Director;
 import com.mycompany.eeapp.data.JpaRepository;
 import com.mycompany.eeapp.data.Movie;
@@ -21,6 +22,7 @@ public class MetadataService {
     @Inject @Named("directorRepository")
     private JpaRepository<Director, Long> directorRepo;
 
+    @LatencyLogger
     public Long createMovie(final CreateMovieRequest createMovieRequest) {
         Movie movie = new Movie();
         movie.setTitle(createMovieRequest.getTitle());
@@ -35,6 +37,7 @@ public class MetadataService {
         return movie.getId();
     }
 
+    @LatencyLogger
     public Long createDirector(final CreateDirectorRequest createDirectorRequest) {
         Director director = new Director();
         director.setName(createDirectorRequest.getName());
