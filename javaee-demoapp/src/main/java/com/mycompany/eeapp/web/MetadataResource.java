@@ -60,7 +60,7 @@ public class MetadataResource {
     @Path("/get/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public MetadataDto getMetadata(@PathParam("id") Long id) {
-        logger.info("get metadata by id: " + id);
+        logger.info("Get metadata by id: " + id);
         MetadataDto dto = metadataService.getMetadata(id);
         dto.set_self(uriInfo.getBaseUriBuilder()
                 .path(MetadataResource.class)
@@ -73,7 +73,7 @@ public class MetadataResource {
     @Path("/getsimple/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public JsonObject getSimpleMetadata(@PathParam("id") Long id) {
-        logger.info("get metadata with url by id: " + id);
+        logger.info("Get metadata with url by id: " + id);
         MetadataDto dto = metadataService.getMetadata(id);
         return Json.createObjectBuilder()
                 .add("title", dto.getTitle())
