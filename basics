@@ -1,0 +1,30 @@
+# JAVA ALAPOK
+
+Általános célú programozási nyelv: olyan programozási nyelv, amit széles körűen fel lehet használni szoftverek írására. A java általános célú.
+
+Obketumorientált programozás (OOP): olyan programozási paradigma, amely a programokat objektumokból építi fel. A java objektum orientált programozási nyelv. A 8 primitív típuson (boolean, char, byte, short, int, long, float, double) kívül minden az Object osztály leszármazottja.
+
+Platform független: a Javában íródott programok hasonlóan fognak futni különböző hardvereken. Ezt úgy lehet megvalósítani, hogy a Java fordítóprogram csak egy úgynevezett Java bájtkódra fordítja le a forráskódot, ami aztán futtatva lesz a virtuális gépben.
+
+Vannak olyan Java fordítóprogramok, amelyek natív gépi kódra fordítják le a forráskódot.
+
+Garbage Collection: egy formája a biztonságos memóriakezelésnek. A garbage collector (GC, szemétgyűjtő) megkísérli eltávolítani a memóriából azokat az objektumokat, amelyeket az alkalmazás már nem használ. A javaban nem kell memóriát felszabadítanunk, hanem a virtuális gép megteszi ezt helyettünk.
+
+A Java-nak nincs hivatalos standardizációja, az Oracle implementációja számít a de facto standardnak. Ez az Oracle implementáció két részre van osztva. Az egyik része a Java Runtime Environment (JRE), a másik pedig a Java Development Kit (JDK).
+
+Java SE: Java Platform, Standard Edition. Egy széles körben elterjedt és használt platform specifikáció a Java nyelv programozásához. Széleskörben használatos általános API-kat határoz meg, és tartalmazza a Java nyelv specifikációt (JLS) és a Virtuális gép specifikációt. 
+
+Java EE: Java Platform, Enterprise Edition. Abban különbözik a Standard Edition-től, hogy több programkönyvtárat (API-t) tartalmaz. Mindkettőnek a legismertebb implementációja a JRE+JDK páros.
+
+A java forráskódot először le kell fordítani bájtkódra egy fordítóprogrammal (compiler)  
+.java -> .class
+A bájtkódot a Java virtuális gép (JVM) interpretálja
+A JDK fordítóprogramja: javac
+
+fordítás: javac HelloWorld.java
+futtatás: java HelloWorld
+jar fájl futtatása: java –jar filename.jar
+path kiíratása: echo %PATH%
+path beállítása: set PATH=%PATH%;”c:\Program Files\Java\jdk.1.6.0_18\bin\”
+
+Tehát a java három szerepet tölt be: programozási nyelv, köztesréteg (middleware) és platform.
