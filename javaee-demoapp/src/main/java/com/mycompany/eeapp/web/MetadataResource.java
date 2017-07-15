@@ -5,7 +5,6 @@ import com.mycompany.eeapp.service.MetadataService;
 import com.mycompany.eeapp.ws.CreateDirectorRequest;
 import com.mycompany.eeapp.ws.CreateMovieRequest;
 
-import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -14,17 +13,14 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Path("meta")
-@Stateless
 public class MetadataResource {
 
-    @Inject
-    private Logger logger;
-
-    @Inject
-    private MetadataService metadataService;
+    @Inject private Logger logger;
+    @Inject private MetadataService metadataService;
 
     @Inject @Config(key = "mycompany.msg")
     private String msg;
@@ -50,7 +46,7 @@ public class MetadataResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public void postMovie(@NotNull CreateDirectorRequest createDirectorRequest) {
         Long id = metadataService.createDirector(createDirectorRequest);
-        logger.info("Director created with id: " + id);
+        logger.log(Level.INFO, "Director created with id: {0}", id);
     }
 
     @Context

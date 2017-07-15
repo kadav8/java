@@ -7,3 +7,5 @@ target/
 /javaee-demoapp/.settings/
 /javaee-parent/.project
 /javaee-parent/.settings/
+/javaee-parent/javaee-parent.iml
+/javaee-demoapp/nb-configuration.xml
