@@ -13,9 +13,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface Config {
 
     @Nonbinding
-    String key() default "";
-
-    @Nonbinding
-    String defaultValue() default "";
+    String value() default "";
 
 }

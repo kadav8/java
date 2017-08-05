@@ -4,20 +4,16 @@ import com.mycompany.eeapp.service.MetadataService;
 
 import javax.inject.Inject;
 import javax.jws.WebService;
-import javax.validation.constraints.NotNull;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @WebService(serviceName = "MetadataService", portName = "MetadataPort")
 public class MetadataEndpoint {
 
-    @Inject
-    private Logger logger;
+    @Inject private Logger logger;
+	@Inject private MetadataService metadataService;
 
-    @Inject
-    private MetadataService metadataService;
-
-    public BaseResponse createMovie(@NotNull CreateMovieRequest createMovieRequest) {
+    public BaseResponse createMovie(CreateMovieRequest createMovieRequest) {
         BaseResponse response = new BaseResponse();
         try {
             Long id = metadataService.createMovie(createMovieRequest);
@@ -32,7 +28,7 @@ public class MetadataEndpoint {
         return response;
     }
 
-    public BaseResponse createDirector(@NotNull CreateDirectorRequest createDirectorRequest) {
+    public BaseResponse createDirector(CreateDirectorRequest createDirectorRequest) {
         BaseResponse response = new BaseResponse();
         try {
             Long id = metadataService.createDirector(createDirectorRequest);

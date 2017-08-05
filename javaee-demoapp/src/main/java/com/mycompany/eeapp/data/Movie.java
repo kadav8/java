@@ -33,4 +33,13 @@ public class Movie extends AbstractEntity {
     public void setYear(Integer year) {
         this.year = year;
     }
+
+	@Override
+	public String toString() {
+		return "Movie{" +
+				"title='" + title + '\'' +
+				", director=" + director +
+				", year=" + year +
+				'}';
+	}
 }

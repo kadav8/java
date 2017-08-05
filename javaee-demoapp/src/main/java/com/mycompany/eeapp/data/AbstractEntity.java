@@ -3,7 +3,6 @@ package com.mycompany.eeapp.data;
 import javax.persistence.*;
 
 @MappedSuperclass
-//EntityListeners(AuditingEntityListener.class)
 public abstract class AbstractEntity {
 
     @Id

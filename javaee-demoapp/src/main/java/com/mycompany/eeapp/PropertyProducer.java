@@ -19,7 +19,7 @@ public class PropertyProducer {
     private void initProperties() {
         String path = System.getProperty("property.file.location");
         String propfilename = System.getProperty("property.file.name");
-        propfilename = (propfilename != null && !propfilename.isEmpty()) ? propfilename : "application.properties";
+        propfilename = ( propfilename != null && !propfilename.isEmpty() ) ? propfilename : "application.properties";
 
         InputStream is = null;
         try {
@@ -29,19 +29,20 @@ public class PropertyProducer {
             }
             if (file != null && file.exists() && file.canRead()) {
                 is = new FileInputStream(file);
-            } else {
+            }
+            else {
                 is = this.getClass().getClassLoader().getResourceAsStream(propfilename);
             }
             properties.load(is);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new RuntimeException("Could not init configuration", e);
-        } finally {
+        }
+        finally {
             if (is != null) {
                 try {
                     is.close();
-                } catch (IOException e1) {
-                    // ignored
-                }
+                } catch (IOException e1) { /* ignored */ }
             }
         }
     }
@@ -50,10 +51,6 @@ public class PropertyProducer {
     @Config
     public String exposeConfig(InjectionPoint injectionPoint) {
         Config config = injectionPoint.getAnnotated().getAnnotation(Config.class);
-        String value = properties.getProperty(config.key());
-        if(value == null && config.defaultValue() != null && !config.defaultValue().isEmpty()) {
-            value = config.defaultValue();
-        }
-        return value;
+        return properties.getProperty(config.value());
     }
 }

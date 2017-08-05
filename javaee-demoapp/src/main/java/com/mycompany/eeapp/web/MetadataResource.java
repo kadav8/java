@@ -1,6 +1,7 @@
 package com.mycompany.eeapp.web;
 
 import com.mycompany.eeapp.Config;
+import com.mycompany.eeapp.service.AsynchService;
 import com.mycompany.eeapp.service.MetadataService;
 import com.mycompany.eeapp.ws.CreateDirectorRequest;
 import com.mycompany.eeapp.ws.CreateMovieRequest;
@@ -21,16 +22,20 @@ public class MetadataResource {
 
     @Inject private Logger logger;
     @Inject private MetadataService metadataService;
-
-    @Inject @Config(key = "mycompany.msg")
-    private String msg;
-    @Inject @Config(key = "mycompany.msg2", defaultValue = "Java EE")
-    private String msg2;
+    @Inject private AsynchService asynchService;
+	@Context private UriInfo uriInfo;
+    @Inject @Config("mycompany.msg") private String msg;
 
     @GET
     @Path("/hello")
     public String hello() {
-        return msg + " " + msg2;
+        return msg;
+    }
+
+    @GET
+    @Path("/asynch")
+    public String asynch() {
+		return asynchService.startService();
     }
 
     @POST
@@ -49,19 +54,18 @@ public class MetadataResource {
         logger.log(Level.INFO, "Director created with id: {0}", id);
     }
 
-    @Context
-    private UriInfo uriInfo;
-
     @GET
     @Path("/get/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public MetadataDto getMetadata(@PathParam("id") Long id) {
         logger.info("Get metadata by id: " + id);
         MetadataDto dto = metadataService.getMetadata(id);
-        dto.set_self(uriInfo.getBaseUriBuilder()
-                .path(MetadataResource.class)
-                .path(MetadataResource.class, "getMetadata")
-                .build(dto.getMovieId()).toString());
+        if(dto != null) {
+	        dto.set_self(uriInfo.getBaseUriBuilder()
+			        .path(MetadataResource.class)
+			        .path(MetadataResource.class, "getMetadata")
+			        .build(dto.getMovieId()).toString());
+        }
         return dto;
     }
 
@@ -71,9 +75,12 @@ public class MetadataResource {
     public JsonObject getSimpleMetadata(@PathParam("id") Long id) {
         logger.info("Get metadata with url by id: " + id);
         MetadataDto dto = metadataService.getMetadata(id);
-        return Json.createObjectBuilder()
-                .add("title", dto.getTitle())
-                .add("year", dto.getYear())
-                .build();
+        if(dto != null) {
+	        return Json.createObjectBuilder()
+			        .add("title", dto.getTitle())
+			        .add("year", dto.getYear())
+			        .build();
+        }
+        return null;
     }
 }

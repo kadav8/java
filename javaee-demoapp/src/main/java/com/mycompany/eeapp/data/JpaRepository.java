@@ -17,16 +17,19 @@ public class JpaRepository<T, K> {
 
     public T create(T entity) {
         entityManager.persist(entity);
+	    entityManager.flush();
         return entity;
     }
 
     public T update(T entity) {
-        entityManager.merge(entity);
-        return entity;
+        T retEnt = entityManager.merge(entity);
+	    entityManager.flush();
+        return retEnt;
     }
 
     public void remove(T entity) {
         entityManager.remove(entity);
+	    entityManager.flush();
     }
 
     public T findOne(K id) {
