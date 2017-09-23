@@ -1,0 +1,3 @@
+module viewModule {
+	requires calculatorService;
+}
