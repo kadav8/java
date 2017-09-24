@@ -1,3 +1,3 @@
 module demo {
-    exports com.examples.collections;
+    exports com.example.collections;
 }

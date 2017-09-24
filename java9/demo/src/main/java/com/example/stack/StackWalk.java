@@ -1,4 +1,4 @@
-package com.examples.stack;
+package com.example.stack;
 
 import java.util.EnumSet;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.examples;
+package com.example;
 
 import java.io.IOException;
 import java.lang.module.ModuleDescriptor;

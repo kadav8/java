@@ -1,4 +1,4 @@
-package com.examples.logging;
+package com.example.logging;
 
 public class PlatformLogging {
 

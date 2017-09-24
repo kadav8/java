@@ -1,4 +1,4 @@
-package com.examples.optional;
+package com.example.optional;
 
 import java.util.Optional;
 import java.util.Random;
@@ -14,6 +14,11 @@ public class OptionalDemo {
 		Stream.of("123", "abc", "!§$", "%&/")
 				.map(OptionalDemo::load)
 				.forEach(System.out::println);
+
+		// stream from optional:
+		load("444").stream().forEach(System.out::println);
+
+		Optional.empty().stream().forEach(System.out::println);
 	}
 
 	public static Optional load(String id) {

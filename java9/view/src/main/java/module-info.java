@@ -1,3 +1,3 @@
 module viewModule {
-	requires calculatorService;
+	requires calculatorModule;
 }
