@@ -1,3 +1,0 @@
-module viewModule {
-	requires calculatorModule;
-}
