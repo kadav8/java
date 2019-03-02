@@ -9,10 +9,7 @@
         <artifactId>javaee-parent</artifactId>
         <version>1.0</version>
     </parent>
-
-    <groupId>com.mycompany</groupId>
     <artifactId>javaee-demoapp</artifactId>
-    <version>1.0</version>
     <packaging>war</packaging>
 
     <dependencies>
